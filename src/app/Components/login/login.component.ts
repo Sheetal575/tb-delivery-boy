@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
 @Component({
   selector: 'app-login',
@@ -12,15 +13,24 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   hide = true;
-  slides = [
-    {'image': '../../../assets/slider/1.png'},
-    {'image': '../../../assets/slider/2.png'},
-    {'image': '../../../assets/slider/3.png'},
-    {'image': '../../../assets/slider/4.png'},
-    {'image': '../../../assets/slider/5.png'},
-    {'image': '../../../assets/slider/6.png'},
-    {'image': '../../../assets/slider/7.png'},
-    {'image': '../../../assets/slider/8.png'},
-    {'image': '../../../assets/slider/9.png'},
-  ];
+  submit = true;
+  getProfile:boolean = false;
+  getPassword:boolean = false;
+  buttonText = "Submit";
+
+  //for login of user---
+  login(loginDetails:NgForm){
+    this.getProfile = true;
+    console.log(loginDetails.value)
+    if(this.buttonText == "Submit"){
+      this.buttonText = "Login";
+      console.log("submit");
+    }else if(this.buttonText == "Login"){
+      console.log("login");
+    }
+  }
+  showPassword(){
+    this.getProfile = false;
+    this.getPassword = true;
+  }
 }

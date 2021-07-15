@@ -18,6 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LoadingComponent } from './Utils/loading/loading.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { LoadingComponent } from './Utils/loading/loading.component';
     MatTableModule,
     MatToolbarModule,
     FlexLayoutModule,
+    FormsModule,
     // NgbModule,
   ],
   providers: [],

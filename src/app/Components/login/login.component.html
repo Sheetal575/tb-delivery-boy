@@ -1,59 +1,52 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="h-100 login_page " fxLayout.xs="column" fxLayout.sm="column">
-     <div fxFlex="40%" fxFlex.xs="100%" fxLayoutAlign="center center" fxLayout="column"  class="w-100 ">
+<div fxLayout="column"  class="h-100 login_page "  fxLayout.sm="column">
+    <div fxLayout="row" class="h-100 w-100" fxLayoutAlign="center center">
+     <div fxFlex="40%" fxFlex.xs="100%" fxFlex.md = "60%" fxFlex.sm="70%" fxLayoutAlign="center center" fxLayout="column"  class="w-100 ">
         <div fxLayoutAlign="center center">
           <img src="../../../assets/logos/small logo.png" alt="">
         </div>
         <br>
         <br>
         <br>
-        <div  fxLayoutAlign="center center" fxLayout="column" class="form">
-            <div class="input-group">
-                <input class="form-control py-2 " type="number" placeholder="Mobile Number" >
+        <form  fxLayoutAlign="center center" fxLayout="column" class="form" #loginForm = "ngForm">
+            <div class="input-group" >
+                <input class="form-control py-2 "
+                        type="number"
+                        placeholder="Mobile Number"
+                        ngModel
+                        number
+                        name = "number"
+
+                >
             </div>
             <br>
-            <div class="input-group">
-                <input class="form-control py-2 "  placeholder="Password" [type]="hide ? 'password' : 'text'">
+            <!-- <app-loading *ngIf="getProfile"></app-loading> -->
+            <div class="input-group" *ngIf="!getPassword">
+                <input class="form-control py-2 "
+                       placeholder="Password"
+                       [type]="hide ? 'password' : 'text'"
+                       ngModel
+                       password
+                       name = "password"
+                >
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
             </div>
             <br>
-            <div >
-                <a >Call us 18004190804 for support</a>
-            </div>
-            <br>
-            <br>
             <div style="width: 100%;" fxLayoutAlign="center ">
-              <button mat-raised-button class="submit ">Submit</button>
+              <button mat-raised-button
+                      class="submit "
+                      type="submit"
+                      (click) = "login(loginForm)"
+                      >{{buttonText}}</button>
             </div>
-        </div>
+        </form>
      </div>
-     <!-- <mat-divider vertical fxHide.xs fxHide.sm></mat-divider>
-     <div fxFlex="50%" class="p-5 h-100" fxLayoutAlign="center center">
-      <mat-carousel
-      timings="250ms ease-in"
-      [autoplay]="true"
-      interval="1000"
-      color="accent"
-      maxWidth="100%"
-      maxHeight="100%"
-      proportion="60"
-      slides="9"
-      [loop]="true"
-      [hideArrows]="true"
-      [hideIndicators]="true"
-      [useKeyboard]="false"
-      [useMouseWheel]="false"
-      orientation="ltr"
-    >
-      <mat-carousel-slide
-
-        #matCarouselSlide
-        *ngFor="let slide of slides; let i = index"
-        [image]="slide.image"
-        overlayColor="#00000040"
-        [hideOverlay]="false"
-      ></mat-carousel-slide>
-    </mat-carousel>
-    </div> -->
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end " class="p-3">
+      <div >
+        <!-- <button (click)="showPassword()"></button> -->
+        <a >Call us 18004190804 for support</a>
+      </div>
+    </div>
 </div>
