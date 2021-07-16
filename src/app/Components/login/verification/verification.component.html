@@ -1,23 +1,28 @@
-<div fxLayoutAlign="center center" fxLayout="row" class="w-100 h-100">
+<div fxLayoutAlign="center center" fxLayout="row" class="w-100 h-100 p-3">
   <mat-card fxLayout="column" fxFlex.lg="30%" fxFlex.xs="90%" fxFlex.md = "50%" fxFlex.sm="70%" >
     <div fxLayoutAlign="center center" class="w-100" >
       <span class="text-muted fs-4 p-3">Enter Your Verification Details</span>
     </div>
-    <form action=""  >
+    <form  class="p-2" #verficationForm = "ngForm">
       <div class="w-100">
         <div class="p-2 fs-6">
           Upload you Image below :
         </div>
-        <div class="border m-2 p-2">
-           <img src="https://cdn2.vectorstock.com/i/1000x1000/48/06/image-preview-icon-picture-placeholder-vector-31284806.jpg" alt="">
+        <div class="border m-2 p-2" *ngIf="filePath && filePath !== ''">
+           <img [src]="filePath"  >
         </div>
-        <div fxLayout="row" class="p-2" fxLayoutAlign="center center">
-          <div fxLayout="50%" class="p-2">
-            <input  type="file" placeholder="Browse You Image" class="w-100 h-100 ">
+        <div fxLayout="row" class="p-2">
+          <div fxLayout="100%" class="p-2">
+            <input  type="file"
+                    placeholder="Browse You Image"
+                    class="w-100 h-100 "
+                    (change)="onFileChanged($event)"
+                    required
+            >
           </div>
-          <div fxLayout="50%">
+          <!-- <div fxLayout="50%">
             <button mat-raised-button >Upload Image</button>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="w-100">
@@ -25,11 +30,18 @@
           Enter you login Kilometer :
         </div>
         <div class="p-2">
-          <input type="number" class="form-control">
+          <input type="number"
+                 class="form-control"
+                 ngModel
+                 required
+                 distance
+                 name="distance"
+          >
         </div>
       </div>
       <div class="p-2">
-        <button mat-raised-button >Save Details</button>
+        <button mat-raised-button
+               (click)="userVerificationDetails(verficationForm)">Save Details</button>
       </div>
     </form>
 

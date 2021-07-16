@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-verification',
@@ -6,11 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./verification.component.scss']
 })
 export class VerificationComponent implements OnInit {
-
+  selectedFile: File;
+  filePath:string;
   constructor() { }
 
   ngOnInit(): void {
   }
-  uploadImage="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fp%2Fimage-preview%2F9pmwbm6mwhgt&psig=AOvVaw3xpECBYJ0VzERfLMEcG-2Z&ust=1626514291107000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNiYqPij5_ECFQAAAAAdAAAAABAD"
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0]
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.filePath = reader.result as string;
+    }
+    reader.readAsDataURL(this.selectedFile)
+  }
+  userVerificationDetails(verficationForm:NgForm){
+    console.log(verficationForm.value);
 
+  }
 }
