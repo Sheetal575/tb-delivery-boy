@@ -20,12 +20,17 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LoadingComponent } from './Utils/loading/loading.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './Components/home/home.component';
+import { VerificationComponent } from './Components/login/verification/verification.component';
+import { ErrorPageComponent } from './Utils/error-page/error-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LoadingComponent,
-    HomeComponent
+    HomeComponent,
+    VerificationComponent,
+    ErrorPageComponent,
   ],
   imports: [
     MatCarouselModule,

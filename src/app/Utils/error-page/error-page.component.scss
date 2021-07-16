@@ -1,0 +1,23 @@
+$secondary : rgb(191, 207, 207);
+$primary :#04375c;
+.error-page{
+  background: $secondary;
+}
+img{
+  height: 60%;
+  width: 55%;
+}
+.error{
+  font-size: 1020%;
+  font-family: 'Black Ops One', cursive;
+  color: $primary;
+}
+.button{
+  padding-right: 10%;
+
+}
+button{
+  background-color: $primary;
+  color: white;
+
+}
