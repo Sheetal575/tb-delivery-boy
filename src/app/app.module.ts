@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './Components/home/home.component';
 import { VerificationComponent } from './Components/login/verification/verification.component';
 import { ErrorPageComponent } from './Utils/error-page/error-page.component';
+import { LoginBoxComponent } from './Components/login-box/login-box.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ErrorPageComponent } from './Utils/error-page/error-page.component';
     HomeComponent,
     VerificationComponent,
     ErrorPageComponent,
+    LoginBoxComponent,
   ],
   imports: [
     MatCarouselModule,

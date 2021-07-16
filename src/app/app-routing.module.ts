@@ -1,3 +1,5 @@
+import { VerificationComponent } from './Components/login/verification/verification.component';
+import { LoginBoxComponent } from './Components/login-box/login-box.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,12 +9,22 @@ import { ErrorPageComponent } from './Utils/error-page/error-page.component';
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "login",
+    redirectTo: "user-login",
     pathMatch: "full",
   },
  {
-   path:"login",
-   component:LoginComponent,
+   path:"user-login",
+   component:LoginBoxComponent,
+   children:[
+     {
+       path:"",
+       component:LoginComponent,
+     },
+     {
+       path:"user-verification",
+       component:VerificationComponent,
+     }
+   ]
 
  },
  {

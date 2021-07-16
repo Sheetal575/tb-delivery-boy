@@ -1,63 +1,59 @@
-  <div fxLayout="column"  class="h-100 login_page "  fxLayout.sm="column">
-      <div fxLayout="row" class="h-100 w-100" fxLayoutAlign="center center">
-        <div fxFlex.lg="30%" fxFlex.xs="100%" fxFlex.md = "60%" fxFlex.sm="70%" fxLayoutAlign="center center" fxLayout="column"  class="w-100 ">
-          <div fxLayoutAlign="center center">
-            <img src="../../../assets/logos/small logo.png" alt="">
+<div fxLayout="row" fxLayoutAlign="center center"  class="w-100 h-100">
+<div fxLayout="column" fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxLayoutAlign="center center">
+  <div >
+    <img src="../../../assets/logos/small logo.png" alt="">
+  </div>
+  <br>
+  <mat-card class="w-100 pt-4 pb-4"  >
+      <div fxLayoutAlign="center center">
+          <span class="text-muted fs-3 p-3">Welcome Back</span>
+      </div>
+      <div fxLayoutAlign="center center">
+          <span class="fs-6">Please Sign in to your account below</span>
+      </div>
+      <form  fxLayoutAlign="center center" fxLayout="column" class="form" #loginForm = "ngForm" class="pt-5">
+          <div class="input-group" >
+              <input class="form-control py-2 "
+                      required
+                      type="number"
+                      placeholder="Mobile Number"
+                      ngModel
+                      number
+                      name = "number"
+                      required
+          >
           </div>
           <br>
+          <div class="input-group" *ngIf="getPassword">
+              <input class="form-control py-2 "
+                      placeholder="Password"
+                      [type]="hide ? 'password' : 'text'"
+                      ngModel
+                      password
+                      name = "password"
+                      required
+              >
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+          </div>
+          <div style="width: 100%;" fxLayoutAlign="center ">
+              <button mat-raised-button
+                  class="submit "
+                  type="submit"
+                  (click) = "login(loginForm)"
+                  routerLink="user-verification"
+                  [disabled] = "!loginForm.valid"
+              >{{buttonText}}</button>
+          </div>
           <br>
-          <br>
-          <mat-card class="w-100 pt-4 pb-4" >
-            <div fxLayoutAlign="center center">
-              <span class="text-muted fs-3 p-3">Welcome Back</span>
-            </div>
-            <div fxLayoutAlign="center center">
-              <span class="fs-6">Please Sign in to your account below</span>
-            </div>
-            <form  fxLayoutAlign="center center" fxLayout="column" class="form" #loginForm = "ngForm" class="pt-5">
-                  <div class="input-group" >
-                      <input class="form-control py-2 "
-                              required
-                              type="number"
-                              placeholder="Mobile Number"
-                              ngModel
-                              number
-                              name = "number"
-                              required
-                      >
-                  </div>
-                  <br>
-                  <div class="input-group" *ngIf="getPassword">
-                      <input class="form-control py-2 "
-                            placeholder="Password"
-                            [type]="hide ? 'password' : 'text'"
-                            ngModel
-                            password
-                            name = "password"
-                            required
-                      >
-                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                      </button>
-                  </div>
-                  <div style="width: 100%;" fxLayoutAlign="center ">
-                    <button mat-raised-button
-                            class="submit "
-                            type="submit"
-                            (click) = "login(loginForm)"
-                            routerLink="home"
-                            [disabled] = "!loginForm.valid"
-                            >{{buttonText}}</button>
-                  </div>
-                  <br>
-                  <app-loading *ngIf="getProfile"></app-loading>
-            </form>
-          </mat-card>
-        </div>
-      </div>
-    <div fxLayout="row" fxLayoutAlign="end " class="p-3">
-      <div >
-        <a class="fs-5 text-muted fw-normal">Call us 18004190804 for support</a>
-      </div>
-    </div>
+          <app-loading *ngIf="getProfile"></app-loading>
+      </form>
+  </mat-card>
+  <div class="p-1">
+    <a class="fs-6  ">Call us 18004190804 for support</a>
   </div>
+
+</div>
+
+</div>
