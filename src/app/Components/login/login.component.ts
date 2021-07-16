@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
 
   //for login of user---
   login(loginDetails:NgForm){
-    this.getProfile = true;
-    console.log(loginDetails.value)
+    const mobileNumber = loginDetails.value.number;
+    const password = loginDetails.value.password
     if(this.buttonText == "Submit"){
-      this.buttonText = "Login";
-      console.log("submit");
+        this.buttonText = "Login";
+        this.getProfile = true;
     }else if(this.buttonText == "Login"){
       console.log("login");
     }

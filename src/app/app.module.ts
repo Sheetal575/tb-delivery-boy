@@ -19,11 +19,13 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LoadingComponent } from './Utils/loading/loading.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './Components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LoadingComponent
+    LoadingComponent,
+    HomeComponent
   ],
   imports: [
     MatCarouselModule,
