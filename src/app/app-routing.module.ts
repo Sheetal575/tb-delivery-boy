@@ -28,7 +28,7 @@ const routes: Routes = [
 
  },
  {
-   path:"home",
+   path:"user-dashboard",
    component:HomeComponent
  },
  {

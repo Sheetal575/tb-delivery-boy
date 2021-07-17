@@ -1,0 +1,9 @@
+$secondary : rgb(191, 207, 207);
+$primary :#04375c;
+.mat-toolbar-row,.mat-toolbar-single-row{
+  height: 49px;
+}
+button{
+  background: $primary;
+  color: white;
+}

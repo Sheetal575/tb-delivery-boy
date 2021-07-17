@@ -1,0 +1,18 @@
+$secondary : rgb(191, 207, 207);
+$primary :#04375c;
+mat-icon{
+  color: black;
+}
+mat-toolbar{
+  background-color: white;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.39);
+}
+img{
+  height: 55px;
+  width: 85px;
+}
+/* Parent Container */
+mat-icon{
+  cursor: pointer;
+}
+

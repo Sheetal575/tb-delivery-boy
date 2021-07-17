@@ -23,6 +23,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { VerificationComponent } from './Components/login/verification/verification.component';
 import { ErrorPageComponent } from './Utils/error-page/error-page.component';
 import { LoginBoxComponent } from './Components/login-box/login-box.component';
+import { DashboardComponent } from './Components/home/dashboard/dashboard.component';
+import { HeaderComponent } from './Components/home/header/header.component';
+import { FooterComponent } from './Components/home/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { LoginBoxComponent } from './Components/login-box/login-box.component';
     VerificationComponent,
     ErrorPageComponent,
     LoginBoxComponent,
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent,
+
   ],
   imports: [
     MatCarouselModule,
