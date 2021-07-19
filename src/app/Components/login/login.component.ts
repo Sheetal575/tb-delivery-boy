@@ -1,3 +1,4 @@
+import { ConstantPool } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
@@ -14,8 +15,9 @@ export class LoginComponent implements OnInit {
   }
   hide = true;
   submit = true;
-  getProfile:boolean = false;
+  getLoading:boolean = false;
   getPassword:boolean = false;
+  noVerification:boolean = false;
   buttonText = "Submit";
 
   //for login of user---
@@ -23,14 +25,29 @@ export class LoginComponent implements OnInit {
     const mobileNumber = loginDetails.value.number;
     const password = loginDetails.value.password
     if(this.buttonText == "Submit"){
-        this.buttonText = "Login";
-        this.getProfile = true;
+        this.searchProfile(mobileNumber);
     }else if(this.buttonText == "Login"){
-      console.log("login");
+      this.loginUser(password);
     }
   }
-  showPassword(){
-    this.getProfile = false;
-    this.getPassword = true;
+
+  searchProfile(mobileNumber){
+    if(mobileNumber){
+      console.log("we got mobile number , Mobile Number is "+mobileNumber);
+      this.buttonText = "Login";
+      this.getPassword = true;
+      this.getLoading = true
+    }else{
+      setTimeout(() => {
+        this.noVerification = true;
+      }, 10);
+
+    }
+  }
+
+  loginUser(password){
+    if(password){
+      console.log("Password is "+ password);
+    }
   }
 }
