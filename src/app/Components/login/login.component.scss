@@ -34,13 +34,15 @@ img{
 .submit{
   background-color: $primary;
   color: rgb(253, 253, 253);
-  height: 45px;
-  width: 30%;
-  font-size: 150%;
+  height: 40px;
+  width: 25%;
+  font-size: 130%;
   font-weight: 400;
   border-radius: 4px 4px 4px 4px;
 }
-
+.material-icons{
+  font-size: 20px !important;
+}
 .carousel-slide-content{
   height: 10% !important;
 }

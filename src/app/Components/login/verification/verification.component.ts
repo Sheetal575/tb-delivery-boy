@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class VerificationComponent implements OnInit {
   selectedFile: File;
   filePath:string;
+  verficationStatus:boolean = false
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class VerificationComponent implements OnInit {
   }
   userVerificationDetails(verficationForm:NgForm){
     console.log(verficationForm.value);
+    this.verficationStatus = true;
 
   }
 }
