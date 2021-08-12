@@ -26,7 +26,7 @@ import { LoginBoxComponent } from './Components/login-box/login-box.component';
 import { DashboardComponent } from './Components/home/dashboard/dashboard.component';
 import { HeaderComponent } from './Components/home/header/header.component';
 import { FooterComponent } from './Components/home/footer/footer.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,6 +59,8 @@ import { FooterComponent } from './Components/home/footer/footer.component';
     MatToolbarModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
+
     // NgbModule,
   ],
   providers: [],

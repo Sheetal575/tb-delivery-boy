@@ -6,10 +6,10 @@
   <br>
   <mat-card class="w-100 pt-4 pb-4"  >
     <div *ngIf="getPassword" class="alert alert-success">
-      Mobile Number verified Successfully!
+      {{loginSuccessMsg}}
     </div>
-    <div *ngIf="noVerification" class="alert alert-danger" [hidden]="getPassword">
-      Please Enter Mobile Number!
+    <div *ngIf="noVerification" class="alert alert-danger" >
+      {{loginErrorMsg}}
     </div>
       <div fxLayoutAlign="center center">
           <span class="text-muted fs-3 p-3">Welcome Back</span>
