@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "truckbuddy-helper",
+    "public": "dist/Tb-delivery-boy",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
